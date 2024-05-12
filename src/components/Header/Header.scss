@@ -1,42 +1,42 @@
 @import '../../config/scss/generals.scss';
 
 header {
-    width: 100%;
-    background-color: $color-bg-base;
-    padding: 16px 22px;
-    display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
+  width: 100%;
+  background-color: $color-bg-base;
+  padding: 16px 22px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 
 .header-blog-name {
-    display: flex;
-    align-items: center;
-    font-size: $font-size-h6;
-    line-height: $line-height-h5_h6;
-    color: $color-heading;
-    font-weight: $font-weight-main;
-    margin: 0;
+  display: flex;
+  align-items: center;
+  font-size: $font-size-h6;
+  line-height: $line-height-h5_h6;
+  color: $color-heading;
+  font-weight: $font-weight-main;
+  margin: 0;
 }
 
 .btn {
-    padding: 8px 19px;
-    font-size: $font-size-h6;
-    line-height: $line-height-h5_h6;
-    font-weight: $font-weight-main;
-    margin: 0;
-    border-radius: 5px;
-    border: 1px solid;
-    background-color: $color-bg-base;
+  padding: 8px 19px;
+  font-size: $font-size-h6;
+  line-height: $line-height-h5_h6;
+  font-weight: $font-weight-main;
+  margin: 0;
+  border-radius: 5px;
+  border: 1px solid;
+  background-color: $color-bg-base;
 }
 
 .btn-primary {
-    color: $color-success;
-    border-color: $color-success;
-    margin-left: 19px;
+  color: $color-success;
+  border-color: $color-success;
+  margin-left: 19px;
 }
 
 .btn-without-border {
-    border: none;
-    color: $color-heading;
+  border: none;
+  color: $color-heading;
 }

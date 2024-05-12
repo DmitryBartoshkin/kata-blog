@@ -74,7 +74,7 @@
     },
     "overrides": [
       {
-        "files": ["src/stores/*-slice.js"],
+        "files": ["src/stores/*Slice.js"],
         "rules": {
           "no-param-reassign": [
             "error",

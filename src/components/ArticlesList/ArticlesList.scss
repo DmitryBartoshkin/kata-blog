@@ -1,0 +1,32 @@
+@import '../../config/scss/generals.scss';
+
+.ant-pagination-mini {
+  text-align: center;
+  margin: 26px;
+
+  & .ant-pagination-item-active {
+    background-color: $color-primary;
+
+    & a {
+      color: $color-bg-base;
+    }
+  }
+
+  & .ant-pagination-item-active:hover a {
+    color: $color-heading;
+  }
+}
+
+.ant-spin {
+  width: 100%;
+  text-align: center;
+}
+
+.ant-alert {
+  width: 600px;
+  margin: 40px auto;
+}
+
+ul {
+  padding: 0;
+}

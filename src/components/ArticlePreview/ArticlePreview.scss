@@ -1,0 +1,94 @@
+@import '../../config/scss/generals.scss';
+
+.article-preview {
+  background-color: $color-bg-base;
+  width: 938px;
+  box-shadow: $box-shadow;
+  padding: 15px;
+  margin-top: 26px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+
+  &__content {
+    width: 690px;
+  }
+
+  &__header {
+    display: flex;
+  }
+
+  &__title {
+    font-size: $font-size-h5;
+    line-height: $line-height-h5_h6;
+    font-weight: $font-weight-main;
+    color: $color-info;
+    margin: 0;
+    margin-right: 13px;
+  }
+
+  &__favorite {
+    font-size: $font-size-sm;
+    line-height: $line-height-base;
+    color: $color-text;
+    align-content: center;
+  }
+
+  &__favorite img {
+    margin-right: 5px;
+    margin-bottom: -3px;
+  }
+
+  &__tags {
+    display: flex;
+    list-style: none;
+    margin: 4px 0;
+    padding: 0;
+  }
+
+  &__tag {
+    padding: 3px 5px;
+    border: 1px solid;
+    border-radius: 2px;
+    color: $color-text-secondary;
+    border-color: $color-text-secondary;
+    font-size: $font-size-sm;
+    margin-right: 8px;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: $font-size-sm;
+    line-height: $line-height-base;
+    color: $color-text;
+  }
+
+  &__profile {
+    display: flex;
+  }
+}
+
+.profile {
+  &-name {
+    margin: 0;
+    margin-bottom: -5px;
+    font-size: $font-size-h6;
+    line-height: $line-height-h5_h6;
+    font-weight: $font-weight-main;
+    color: $color-heading;
+  }
+
+  &-created-post {
+    font-size: $font-size-sm;
+    line-height: $line-height-base;
+    color: $color-text-secondary;
+    display: flex;
+    justify-content: end;
+  }
+
+  &-avatar {
+    margin-left: 12px;
+    border-radius: 50%;
+  }
+}

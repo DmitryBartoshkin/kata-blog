@@ -1,0 +1,58 @@
+@import '../../config/scss/generals.scss';
+
+.form {
+  background-color: $color-bg-base;
+  width: 384px;
+  box-shadow: $box-shadow;
+  padding: 15px 32px;
+  margin: 60px auto;
+  box-sizing: border-box;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+
+  & h5 {
+    font-size: $font-size-h5;
+    line-height: $line-height-h5_h6;
+    text-align: center;
+    font-weight: $font-weight-bold;
+    margin-bottom: 20px;
+  }
+
+  & .ant-form-item {
+    margin-bottom: 12px;
+  }
+
+  & .ant-form-item-label {
+    padding-bottom: 0;
+  }
+
+  & .ant-form-item-control-input input {
+    font-size: $font-size-lg;
+  }
+
+  & &__btn-login {
+    margin-bottom: 8px;
+    margin-top: 21px;
+  }
+
+  &__additional-info {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 33px;
+
+    & a {
+      color: $color-info;
+    }
+  }
+
+  & .ant-form-item-explain-error {
+    margin-bottom: 12px;
+  }
+
+  & .ant-alert-error {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+}

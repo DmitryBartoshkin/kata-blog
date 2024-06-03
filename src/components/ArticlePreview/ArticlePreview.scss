@@ -26,6 +26,10 @@
     color: $color-info;
     margin: 0;
     margin-right: 13px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    max-width: 600px;
   }
 
   &__favorite {
@@ -45,6 +49,9 @@
     list-style: none;
     margin: 4px 0;
     padding: 0;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
   }
 
   &__tag {
@@ -62,6 +69,7 @@
     font-size: $font-size-sm;
     line-height: $line-height-base;
     color: $color-text;
+    word-break: break-all;
   }
 
   &__profile {

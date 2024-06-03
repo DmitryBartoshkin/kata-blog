@@ -53,7 +53,7 @@ const userSlice = createSlice({
           const { username, token, image } = state.userData.user
           localStorage.setItem('token', token)
           localStorage.setItem('name', username)
-          localStorage.setItem('avatar', image)
+          localStorage.setItem('avatar', image || '')
         }
       })
       .addCase(loginUser.rejected, (state, action) => {

@@ -16,6 +16,10 @@
     width: 690px;
   }
 
+  &__content.deleted {
+    width: 100%;
+  }
+
   &__header {
     display: flex;
   }
@@ -27,6 +31,10 @@
     color: $color-info;
     margin: 0;
     margin-right: 13px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    max-width: 600px;
   }
 
   &__favorite {
@@ -46,6 +54,9 @@
     list-style: none;
     margin: 4px 0;
     padding: 0;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
   }
 
   &__tag {
@@ -70,14 +81,23 @@
     font-size: $font-size-sm;
     line-height: $line-height-base;
     color: $color-text-secondary;
+    word-break: break-all;
   }
 
   &__profile {
     display: flex;
+    flex-wrap: wrap;
+    align-content: start;
+    justify-content: end;
   }
 }
 
 .profile {
+  &-group {
+    display: flex;
+    margin-bottom: 30px;
+  }
+
   &-name {
     margin: 0;
     margin-bottom: -5px;
@@ -99,4 +119,22 @@
     margin-left: 12px;
     border-radius: 50%;
   }
+
+  &-btn-delete {
+    margin-right: 12px;
+  }
+
+  &-btn-edit {
+    color: $color-success;
+    border-color: $color-success;
+  }
+
+  .article &-btn-edit.ant-btn:hover {
+    color: $color-success;
+    border-color: $color-success;
+  }
+}
+
+.ant-popconfirm {
+  width: 246px;
 }

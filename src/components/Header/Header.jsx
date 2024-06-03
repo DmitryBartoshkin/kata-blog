@@ -27,7 +27,7 @@ export default function Header() {
   )
   const profileHeader = (
     <div className="header-auth-btns">
-      <Link to="sign-in">
+      <Link to="new-article">
         <button className="btn btn-primary header-auth-btns__small" type="button">
           Create article
         </button>
@@ -50,7 +50,7 @@ export default function Header() {
           dispatch(logout())
         }}
       >
-        Log Out
+        <Link to="sign-in">Log Out</Link>
       </button>
     </div>
   )

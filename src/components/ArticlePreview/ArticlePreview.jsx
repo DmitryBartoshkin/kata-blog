@@ -6,18 +6,22 @@ import './ArticlePreview.scss'
 
 export default function ArticlePreview(props) {
   const { title, description, author, favoritesCount, tagList, createdAt, slug } = props
-  const tags = tagList.map((el) => (
-    <li className="article-preview__tag" key={`${createdAt}-${Math.random()}`} hidden={el.trim() ? '' : 'hidden'}>
-      {el}
-    </li>
-  ))
+  const tags = tagList.map((el) =>
+    el ? (
+      <li className="article-preview__tag" key={`${createdAt}-${Math.random()}`} hidden={el.trim() ? '' : 'hidden'}>
+        {el}
+      </li>
+    ) : (
+      []
+    )
+  )
 
   return (
     <li className="article-preview">
       <div className="article-preview__content">
         <div className="article-preview__header">
           <h5 className="article-preview__title">
-            <Link to={`articles/${slug}`}>{title.length > 45 ? `${title.slice(0, 45)}...` : title}</Link>
+            <Link to={`articles/${slug}`}>{title}</Link>
           </h5>
           <span className="article-preview__favorite">
             <img src={favorite} alt="Favorite icon" />

@@ -1,0 +1,77 @@
+@import '../../config/scss/generals.scss';
+
+.article-edit {
+  background-color: $color-bg-base;
+  width: 938px;
+  box-shadow: $box-shadow;
+  padding: 15px 32px;
+  margin: 60px auto;
+  box-sizing: border-box;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+
+  & h5 {
+    font-size: $font-size-h5;
+    line-height: $line-height-h5_h6;
+    text-align: center;
+    font-weight: $font-weight-bold;
+    margin-bottom: 20px;
+  }
+
+  & .ant-form-item {
+    margin-bottom: 12px;
+  }
+
+  & .ant-form-item-label {
+    padding-bottom: 0;
+  }
+
+  & .ant-form-item-control-input input {
+    font-size: $font-size-lg;
+  }
+
+  & .btn-send {
+    margin-bottom: 16px;
+    margin-top: 21px;
+    width: 319px;
+  }
+
+  & .ant-form-item-explain-error {
+    margin-bottom: 12px;
+  }
+
+  & .ant-alert-error {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+
+  & .btn-add {
+    display: inline-block;
+    vertical-align: bottom;
+    margin-bottom: 5px;
+
+    & .ant-btn {
+      width: 136px;
+    }
+  }
+
+  & .tag-group {
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+
+  & .tag-group .ant-btn-default {
+    width: 120px;
+    margin-right: 17px;
+  }
+
+  & .tag-group .ant-form-item-control-input-content {
+    display: flex;
+  }
+
+  & .tag-group .ant-form-item {
+    margin-bottom: 0;
+    width: 300px;
+    margin-right: 17px;
+  }
+}

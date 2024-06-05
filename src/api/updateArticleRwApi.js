@@ -10,9 +10,6 @@ const updateArticleRwApi = createAsyncThunk('article/update', async ({ slug, tit
     },
   })
 
-  //   const articleUrl = slug
-  //   console.log(articleUrl)
-
   const options = {
     method: 'PUT',
     headers: {

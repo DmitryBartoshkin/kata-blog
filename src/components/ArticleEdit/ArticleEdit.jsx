@@ -28,7 +28,7 @@ export default function ArticleEdit() {
   }, [dispatch, success])
 
   return (
-    <div className="article-create">
+    <div className="article-edit">
       <h5>Edit article</h5>
       {error ? <Alert message={`${error.name}: ${error.message}`} type="error" showIcon /> : null}
       {success ? <Alert message="Success! Article edited" type="success" showIcon /> : null}

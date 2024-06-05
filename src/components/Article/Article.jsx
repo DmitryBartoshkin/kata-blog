@@ -1,13 +1,16 @@
 import { format } from 'date-fns'
 import Markdown from 'markdown-to-jsx'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import { Spin, Button, Popconfirm, Alert } from 'antd'
 
 import getFullArticleRwApi from '../../api/getFullArticleRwApi'
 import deleteArticleRwApi from '../../api/deleteArticleRwApi'
+import favoriteArticleRwApi from '../../api/favoriteArticleRwApi'
+import unfavoriteArticleRwApi from '../../api/unfavoriteArticleRwApi'
 import Errors from '../Errors'
+import unfavorite from '../../assets/img/unfavorite.svg'
 import favorite from '../../assets/img/favorite.svg'
 import './Article.scss'
 
@@ -19,13 +22,38 @@ export default function Article() {
   const { loader, error, deleted } = articleData
   const { slug } = useParams()
   const navigate = useNavigate()
+  const [isLike, setIsLike] = useState(null)
+  const [likesCount, setLikesCount] = useState()
+  const isAuth = localStorage.getItem('token') || false
 
   useEffect(() => {
     dispatch(getFullArticleRwApi(slug))
   }, [dispatch, slug])
 
+  useEffect(() => {
+    if (article) {
+      setIsLike(article.favorited)
+      setLikesCount(article.favoritesCount)
+    }
+  }, [article])
+
   if (article) {
-    const { title, description, createdAt, favoritesCount, tagList, author, body } = article
+    const { title, description, createdAt, tagList, author, body, favoritesCount, favorited } = article
+    const like = () => {
+      if (isAuth) {
+        dispatch(favoriteArticleRwApi(slug))
+        setIsLike(true)
+        setLikesCount(likesCount + 1)
+      }
+    }
+    const unlike = () => {
+      if (isAuth) {
+        dispatch(unfavoriteArticleRwApi(slug))
+        setIsLike(false)
+        setLikesCount(likesCount - 1)
+      }
+    }
+    const imgSrc = isLike === null ? favorited : isLike
     const tags = tagList.map((el) =>
       el ? (
         <li className="article__tag" key={`${createdAt}-${Math.random()}`} hidden={el.trim() ? '' : 'hidden'}>
@@ -70,8 +98,13 @@ export default function Article() {
           <div className="article__header">
             <h5 className="article__title">{title}</h5>
             <span className="article__favorite">
-              <img src={favorite} alt="Favorite icon" />
-              {favoritesCount}
+              <img
+                src={imgSrc ? favorite : unfavorite}
+                onClick={imgSrc ? unlike : like}
+                aria-hidden="true"
+                alt="Favorite icon"
+              />
+              {typeof likesCount === 'number' ? likesCount : favoritesCount}
             </span>
           </div>
           <ul className="article__tags">{tags}</ul>

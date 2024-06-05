@@ -42,16 +42,18 @@ export default function Header() {
           height={46}
         />
       </Link>
-      <button
-        className="btn header-auth-btns__last"
-        type="button"
-        onClick={() => {
-          localStorage.clear()
-          dispatch(logout())
-        }}
-      >
-        <Link to="sign-in">Log Out</Link>
-      </button>
+      <Link to="sign-in">
+        <button
+          className="btn header-auth-btns__last"
+          type="button"
+          onClick={() => {
+            localStorage.clear()
+            dispatch(logout())
+          }}
+        >
+          Log Out
+        </button>
+      </Link>
     </div>
   )
 

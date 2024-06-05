@@ -34,7 +34,7 @@
     overflow-x: auto;
     white-space: nowrap;
     scrollbar-width: thin;
-    max-width: 600px;
+    max-width: 640px;
   }
 
   &__favorite {
@@ -47,6 +47,10 @@
   &__favorite img {
     margin-right: 5px;
     margin-bottom: -3px;
+  }
+
+  &__favorite img:hover {
+    cursor: pointer;
   }
 
   &__tags {

@@ -18,7 +18,6 @@ const articlesSlice = createSlice({
       })
       .addCase(getArticlesRwApi.fulfilled, (state, action) => {
         state.loader = false
-        // state.articlesData.splice(0, 0, action.payload)
         state.articlesData = action.payload
       })
       .addCase(getArticlesRwApi.rejected, (state, action) => {
@@ -27,7 +26,5 @@ const articlesSlice = createSlice({
       })
   },
 })
-
-// export const { } = articlesSlice.reducer
 
 export default articlesSlice.reducer

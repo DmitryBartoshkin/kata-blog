@@ -44,7 +44,7 @@ export default function ArticlePreview(props) {
       <div className="article-preview__content">
         <div className="article-preview__header">
           <h5 className="article-preview__title">
-            <Link to={`articles/${slug}`}>{title}</Link>
+            <Link to={`articles/${slug}`}>{title.trim() ? title : 'No title'}</Link>
           </h5>
           <span className="article-preview__favorite">
             <img

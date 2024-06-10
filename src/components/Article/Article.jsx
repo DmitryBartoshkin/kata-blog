@@ -96,7 +96,7 @@ export default function Article() {
       <>
         <div className="article__content">
           <div className="article__header">
-            <h5 className="article__title">{title}</h5>
+            <h5 className="article__title">{title.trim() ? title : 'No title'}</h5>
             <span className="article__favorite">
               <img
                 src={imgSrc ? favorite : unfavorite}

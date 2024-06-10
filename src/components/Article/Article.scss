@@ -78,6 +78,7 @@
     font-size: $font-size-sm;
     line-height: $line-height-base;
     color: $color-text;
+    word-break: break-word;
   }
 
   &__description {

@@ -24,6 +24,7 @@ export default function FormForArticle({ onFinish, article = { title: '', descri
           {
             required: true,
             message: 'Please input your Title!',
+            whitespace: true,
           },
         ]}
       >
@@ -37,6 +38,7 @@ export default function FormForArticle({ onFinish, article = { title: '', descri
           {
             required: true,
             message: 'Please input your Description!',
+            whitespace: true,
           },
         ]}
       >
@@ -50,6 +52,7 @@ export default function FormForArticle({ onFinish, article = { title: '', descri
           {
             required: true,
             message: 'Please input your Text',
+            whitespace: true,
           },
         ]}
       >
@@ -68,7 +71,7 @@ export default function FormForArticle({ onFinish, article = { title: '', descri
                   validateTrigger={['onChange', 'onBlur']}
                   rules={[
                     {
-                      whitespace: true,
+                      whitespace: false,
                     },
                   ]}
                 >

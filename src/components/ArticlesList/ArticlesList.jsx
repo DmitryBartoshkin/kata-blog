@@ -13,9 +13,15 @@ export default function ArticlesList() {
   const { articles, articlesCount, errors } = articlesData.articlesData
   const { loader, error } = articlesData
   const dispatch = useDispatch()
+  const onChangePage = (e) => {
+    dispatch(getArticlesRwApi(e * 5))
+    localStorage.setItem('currentPage', e)
+  }
+  const currentPage = localStorage.getItem('currentPage') || 1
 
   useEffect(() => {
-    dispatch(getArticlesRwApi(5))
+    const countArticles = localStorage.getItem('currentPage') || 1
+    dispatch(getArticlesRwApi(countArticles * 5))
   }, [dispatch])
 
   if (articles && !loader) {
@@ -43,7 +49,8 @@ export default function ArticlesList() {
           total={articlesCount}
           showSizeChanger={false}
           defaultPageSize={5}
-          onChange={(e) => dispatch(getArticlesRwApi(e * 5))}
+          defaultCurrent={currentPage}
+          onChange={onChangePage}
         />
       </>
     )
@@ -58,8 +65,9 @@ export default function ArticlesList() {
         <Pagination
           size="small"
           total={articlesCount}
+          defaultCurrent={currentPage}
           showSizeChanger={false}
-          onChange={(e) => dispatch(getArticlesRwApi(e * 5))}
+          onChange={onChangePage}
         />
       ) : null}
     </>
